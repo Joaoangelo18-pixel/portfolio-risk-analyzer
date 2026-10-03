@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %} Nova Análise {% endblock %}
+
+{% block main %}
+<div class="container text-start" style="max-width: 650px;">
+    <h2 class="mb-3">Nova Análise Quantitativa</h2>
+    <form action="/analyze" method="post">
+        <div class="mb-3">
+            <label class="form-label font-weight-bold">Nome da Carteira</label>
+            <input type="text" class="form-control" name="name" placeholder="Ex: Ações BR + Tech US" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label font-weight-bold">Ativos (Tickers do Yahoo Finance separados por vírgula)</label>
+            <input type="text" class="form-control" name="tickers" placeholder="PETR4.SA, VALE3.SA, AAPL" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label font-weight-bold">Pesos (Proporção decimal somando 1.0)</label>
+            <input type="text" class="form-control" name="weights" placeholder="0.4, 0.3, 0.3" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100 mt-3">Calcular Métricas de Risco</button>
+    </form>
+</div>
+{% endblock %}

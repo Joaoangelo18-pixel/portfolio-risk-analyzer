@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>As Minhas Análises de Risco</h2>
+        <a href="/analyze" class="btn btn-success">+ Nova Análise</a>
+    </div>
+
+    {% if analyses %}
+        <table class="table table-striped align-middle">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ativos</th>
+                    <th>Retorno Esperado</th>
+                    <th>Volatilidade</th>
+                    <th>Sharpe</th>
+                    <th>VaR (95%)</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in analyses %}
+                    <tr>
+                        <td><strong>{{ a.portfolio_name }}</strong></td>
+                        <td>{{ a.tickers }}</td>
+                        <td>{{ a.exp_return }}%</td>
+                        <td>{{ a.volatility }}%</td>
+                        <td>{{ a.sharpe }}</td>
+                        <td>{{ a.var_95 }}%</td>
+                        <td>{{ a.created_at }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-light border" role="alert">
+            Ainda não realizou nenhuma análise de carteira. Clique no botão acima para começar.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

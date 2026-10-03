@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %} Erro {% endblock %}
+
+{% block main %}
+    <div class="text-center mt-4">
+        <h2>Erro {{ top }}</h2>
+        <p class="lead text-muted">{{ bottom }}</p>
+        <a href="javascript:history.back()" class="btn btn-primary mt-3">Voltar</a>
+    </div>
+{% endblock %}
