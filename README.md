@@ -1,5 +1,5 @@
 # PORTFOLIO RISK ANALYZER
-#### Video Demo: <https://www.youtube.com/watch?v=G_eO6WvpGEY&t=7s>
+#### Video Demo: <https://www.youtube.com/watch?v=r7IMizlToVE&t=7s>
 
 #### Description:
 The **Portfolio Risk Analyzer** is a web-based financial analytics application designed to help investors evaluate and quantify the risk and performance metrics of custom stock portfolios. Developed as the final project for CS50x, this application leverages Python, Flask, SQLite, and quantitative finance techniques to provide clear, actionable financial metrics including Expected Return, Volatility, Sharpe Ratio, and Value at Risk (VaR 95%).
